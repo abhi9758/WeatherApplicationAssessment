@@ -1,8 +1,11 @@
 package com.assessment.WeatherApp.controller;
 
 import com.assessment.WeatherApp.service.WeatherService;
+import io.swagger.v3.oas.annotations.headers.Header;
+import org.springframework.http.HttpHeaders;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -15,7 +18,10 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("weather")
 public class WeatherController {
 
+
     private final WeatherService weatherService;
+
+
 
     /**
      * Constructor for WeatherController, injecting WeatherService dependency.
